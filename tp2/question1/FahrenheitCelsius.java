@@ -1,41 +1,49 @@
 package question1;
 
 /**
- * Décrivez votre classe FahrenheitCelsius ici.
+ * DÃ©crivez votre classe FahrenheitCelsius ici.
  * 
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author Maria Bou Aoun
+ * 
  */
 public class FahrenheitCelsius {
 
-	/**
-	 * le point d'entrée de cette application, dont le commentaire est à
-	 * compléter
-	 * 
-	 * @param args
-	 *            ...
-	 */
-	public static void main(String[] args) {
-		// pour tous les paramètres de la ligne de commande
-		int fahrenheit = 0;
-		float celsius = 0;
-		System.out.println(fahrenheit + "\u00B0F -> " + celsius + "\u00B0C"); // ligne,
-																				// format
-																				// imposés
-																				
-	}
+    /**
+     * le point d'entrÃ©e de cette application, dont le commentaire est Ã 
+     * complÃ©ter
+     * 
+     * @param args
+     *            ...
+     */
+    public static void main(String[] args) {
+        int fahrenheit = 0;
+        double celsius = 0.0;
+        
+    
+        for (String fahrenheitTemp : args) {
+            fahrenheit = Integer.parseInt(fahrenheitTemp);
+            celsius = fahrenheitEnCelsius(fahrenheit);
+            
+            System.out.println(fahrenheit + "\u00B0F -> " + celsius + "\u00B0C"); 
+        }   
+        
+      
+    }
 
-	/**
-	 * la méthode à compléter.
-	 * 
-	 * @param f
-	 *            la valeur en degré Fahrenheit
-	 * @return la conversion en degré Celsius
-	 */
-	public static float fahrenheitEnCelsius(int f) {
-
-		return 0.F; // à compléter en remplaçant ce return 0.F par la fonction
-					// de conversion
-	}
+    /**
+     * la mÃ©thode Ã  complÃ©ter.
+     * 
+     * @param f
+     *            la valeur en degrÃ© Fahrenheit
+     * @return la conversion en degrÃ© Celsius
+     */
+    
+ 
+    public static double fahrenheitEnCelsius(int f) {
+        double celsiusTemp = (((double)5)/((double)9))*(f - 32);
+        celsiusTemp = ((long)(celsiusTemp * 10))/10.0;
+        
+        return celsiusTemp;
+    }
 
 }
